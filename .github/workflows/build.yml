@@ -1,28 +1,21 @@
 name: Docker Image CI
-
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
-env:
-  REGISTRY_HOST: docker.pkg.github.com
-  IMAGE_TAG: $REGISTRY_HOST/$GITHUB_REPOSITORY/image:base 
-
 jobs:
-
-  build:
-
+  push_to_registry:
+    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag $IMAGE_TAG
-
-    - name: Log into registry
-      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login $REGISTRY_HOST -u ${{ github.actor }} --password-stdin
-    
-    - name: Push image
-      run: docker push ${{ github.repository }} $IMAGE_TAG
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository }}
+          tags: image:base
