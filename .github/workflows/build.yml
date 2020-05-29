@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY_HOST: docker.pkg.github.com
-  IMAGE_TAG: $REGISTRY_HOST/${{ github.repository }}/image:base 
+  IMAGE_TAG: $REGISTRY_HOST/$GITHUB_REPOSITORY/image:base 
 
 jobs:
 
