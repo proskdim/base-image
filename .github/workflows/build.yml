@@ -17,5 +17,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: docker.pkg.github.com
-          repository: ${{ github.repository }}
-          tags: image:base
+          repository: melodyn/base-image/image
+          tags: base
