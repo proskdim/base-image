@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 env:
-  REPOSITORY: melodyn/base-image
+  REPOSITORY: ${{ github.repository }}
   REGISTRY_HOST: docker.pkg.github.com
   IMAGE_TAG: image:base 
 
