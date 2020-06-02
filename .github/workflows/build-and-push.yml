@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  REPOSITORY: melodyn/base-image
+  REGISTRY_HOST: docker.pkg.github.com
+  IMAGE_TAG: image:base 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build -t $REGISTRY_HOST/$REPOSITORY/$IMAGE_TAG .
+
+    - name: Log into registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login $REGISTRY_HOST -u ${{ github.actor }} --password-stdin
+    
+    - name: Push image
+      run: docker push $REGISTRY_HOST/$REPOSITORY/$IMAGE_TAG 
