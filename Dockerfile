@@ -12,4 +12,4 @@ RUN apt-get install -yqq \
 RUN pip3 install yamllint yq
 RUN npm install -g ajv-cli
 
-COPY common /tmp/basics/common
+COPY ./common /tmp/basics/common
