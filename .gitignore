@@ -1,9 +1,9 @@
 # Ignore everything
-*
+/*
 
 # But not these files...
-!common/*
-!.github/*
+!/common
+!/.github
 
 !.gitignore
 !.dockerignore
