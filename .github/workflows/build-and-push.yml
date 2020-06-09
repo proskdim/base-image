@@ -18,8 +18,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: docker/build-push-action@v1.1.0
       with:
-        repository: melodyn/base-image
+        repository: ${{ env.IMAGE_NAME }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         tags: latest
-        dockerfile: https://github.com/Melodyn/base-image/blob/master/Dockerfile
