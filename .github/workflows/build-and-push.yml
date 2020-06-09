@@ -20,5 +20,5 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: ${{ secrets.IMAGE_NAME }}
-        dockerfile: /Dockerfile
+        dockerfile: Dockerfile
         tags: latest
