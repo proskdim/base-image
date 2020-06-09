@@ -1,6 +1,6 @@
 # hexlet-basics
 
-[![Github Actions Status](../../workflows/Docker%20Image%20CI/badge.svg)](../../actions)
+[![Github Actions Status](../../workflows/Docker/badge.svg)](../../actions)
 
 Base docker image
 
