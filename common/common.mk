@@ -1,8 +1,3 @@
-compose-setup: compose-build
-
-compose:
-	docker-compose up
-
 compose-sut:
 	docker-compose -f docker-compose.test.yml run sut
 
@@ -17,9 +12,6 @@ compose-schema-validate:
 
 compose-bash:
 	docker-compose run exercises bash
-
-compose-build:
-	docker-compose build
 
 description-lint:
 	yamllint modules
