@@ -1,5 +1,3 @@
-# Ignore everything
-**
-
-# Allow files and directories
-!common/*
+.idea/*
+.vscode/*
+.github/*
