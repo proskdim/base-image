@@ -1,11 +1,2 @@
-# Ignore everything
-/*
-
-# But not these files...
-!/common
-!/.github
-
-!.gitignore
-!.dockerignore
-!Dockerfile
-!README.md
+.idea/*
+.vscode/*
