@@ -11,4 +11,4 @@ RUN pip3 install yamllint yq
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs
 RUN npm install -g ajv-cli
 
-COPY ./common /tmp/basics/common
+COPY ./common /opt/basics/common
