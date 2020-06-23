@@ -28,7 +28,7 @@ SUBDIRS := $(wildcard modules/**/*/.)
 
 schema-validate: $(SUBDIRS)
 $(SUBDIRS):
-	yq . $@/description.ru.yml > /tmp/current-description.json && ajv -s $(CURDIR)/schema.json -d /tmp/current-description.json
-	yq . $@/description.en.yml > /tmp/current-description.json && ajv -s $(CURDIR)/schema.json -d /tmp/current-description.json || true
+	yq . $@/description.ru.yml > /tmp/current-description.json && ajv -s /opt/basics/common/schema.json -d /tmp/current-description.json
+	yq . $@/description.en.yml > /tmp/current-description.json && ajv -s /opt/basics/common/schema.json -d /tmp/current-description.json || true
 
 .PHONY: all test $(SUBDIRS)
