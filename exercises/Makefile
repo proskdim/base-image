@@ -1,0 +1,1 @@
+-include /opt/basics/common/common.mk
