@@ -8,3 +8,5 @@ services:
       - ./exercises:/exercises
     working_dir: /exercises
     command: make check
+    environment:
+      - PATH=/exercises/bin:$PATH
