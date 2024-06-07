@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ env.APP_IMAGE_NAME }}
+          tags: ${{ env.IMAGE_NAME }}
 
       - name: Send notification into Slack
         if: ${{ always() }}
