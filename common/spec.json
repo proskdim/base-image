@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schema.json",
+  "description": "description schema",
+  "title": "Module",
+  "type": "object",
+  "properties": {
+    "language": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "docker_image",
+        "extension",
+        "exercise_filename",
+        "exercise_test_filename",
+        "learn_as",
+        "progress",
+        "name"
+      ],
+      "properties": {
+        "docker_image": {
+          "type": "string"
+        },
+        "extension": {
+          "type": "string"
+        },
+        "exercise_filename": {
+          "type": "string"
+        },
+        "exercise_test_filename": {
+          "type": "string"
+        },
+        "learn_as": {
+          "type": "string"
+        },
+        "progress": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
