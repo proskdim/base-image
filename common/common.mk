@@ -10,9 +10,9 @@ test:
 
 # TODO: add markdown linter and spellckeck (languagetool)
 schema-validate:
-	@$(COMMON_DIR)/validate-spec.sh
-	@$(COMMON_DIR)/validate-language.sh
-	@$(COMMON_DIR)/validate-modules.sh
-	@$(COMMON_DIR)/validate-lessons.sh
+	@$(COMMON_DIR)/bin/validate-spec.sh
+	@$(COMMON_DIR)/bin/validate-language.sh
+	@$(COMMON_DIR)/bin/validate-modules.sh
+	@$(COMMON_DIR)/bin/validate-lessons.sh
 
 .PHONY: all test
