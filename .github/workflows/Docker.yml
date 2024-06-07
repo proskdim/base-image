@@ -8,6 +8,8 @@ on:
 
 env:
   REGISTRY_NAME: hexletbasics
+  CI: true
+  COLOR_MAP: '{ success: "#008000", failure: "#800000" }'
 
 jobs:
   build:
@@ -33,12 +35,11 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tags: latest
-      - name: Set fail Slack env vars
-        if: ${{ failure() }}
-        run: |
-          echo "SLACK_COLOR=#a30200" >> $GITHUB_ENV
+
       - name: Send notification into Slack
         if: ${{ always() }}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2
         env:
+          SLACK_COLOR: ${{ fromJson(env.COLOR_MAP)[job.status] }}
+          SLACK_TITLE: ${{ job.status }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
