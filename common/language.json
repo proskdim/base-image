@@ -26,6 +26,7 @@
   },
   "required": [
     "title",
+    "header",
     "description"
   ],
   "additionalProperties": false
