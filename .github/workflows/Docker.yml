@@ -35,14 +35,12 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        with:
-          # NOTE: Using a docker driver reduces build times.
-          driver: docker
 
       - uses: actions/checkout@v4
 
       - name: Build and push into docker hub
         uses: docker/build-push-action@v6
         with:
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.IMAGE_NAME }}
