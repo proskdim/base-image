@@ -9,7 +9,7 @@ on:
 env:
   REGISTRY_NAME: hexletbasics
   CI: true
-  IMAGE_NAME: hexletbasics/base-image
+  IMAGE_NAME: codex/base-image
 
 jobs:
   build:
