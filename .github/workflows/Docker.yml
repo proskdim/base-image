@@ -7,9 +7,9 @@ on:
     branches: [main]
 
 env:
-  REGISTRY_NAME: hexletbasics
+  REGISTRY_NAME: codex
   CI: true
-  IMAGE_NAME: codex/base-image
+  IMAGE_NAME: proskurekov/base-image
 
 jobs:
   build:
