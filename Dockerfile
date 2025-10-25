@@ -7,11 +7,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -yqq --no-install-recommends \
     curl git wget \
-    python3-pip \
     libyaml-dev \
-    zip unzip \ 
-    software-properties-common \
     yamllint \
+    zip unzip \ 
     yq jq \
     libatomic1 \
     make \
