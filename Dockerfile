@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -yqq --no-install-recommends \
     yamllint \
     yq jq \
     libatomic1 \
+    make \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
