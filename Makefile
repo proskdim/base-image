@@ -1,5 +1,5 @@
 build:
-	docker buildx build -t hexletbasics/base-image .
+	docker buildx build -t codex/base-image .
 
 push:
-	docker push hexletbasics/base-image
+	docker push codex/base-image

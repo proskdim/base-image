@@ -1,4 +1,4 @@
-COMMON_DIR := /opt/basics/common
+COMMON_DIR := /opt/codex/common
 
 check: description-lint code-lint schema-validate test
 
