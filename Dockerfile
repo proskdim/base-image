@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -yqq --no-install-recommends ca-certificat
     libatomic1 \
     make \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && rm -rf /var/lib/apt/lists/*
 
 # copy common
 COPY ./common /opt/codex/common
@@ -39,5 +39,8 @@ RUN ln -vs /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
 
 # install validator
 RUN npm install -g ajv-cli
+
+# install just
+RUN npm install -g rust-just
 
 CMD ["/bin/bash"]
