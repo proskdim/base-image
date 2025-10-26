@@ -1,14 +1,16 @@
 alias b := build
 alias p := push
+alias r := run
 
-IMAGE_NAME := "codex/base-image"
+IMAGE_NAME := "proskurekov/base-image"
 
 default: build
 
-[doc('build docker image')]
+run:
+    docker run -it --rm {{IMAGE_NAME}} bash
+
 build:
     docker buildx build -t {{IMAGE_NAME}} .
 
-[doc('push docker image')]
 push:
 	docker push {{IMAGE_NAME}}

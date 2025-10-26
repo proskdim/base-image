@@ -1,5 +1,5 @@
 FROM node:current-slim AS node
-FROM leafgarland/janet AS janet
+FROM proskurekov/janet AS janet
 FROM debian:bookworm-slim AS base
 
 ENV LANG=C.UTF-8
@@ -22,7 +22,8 @@ RUN apt-get update && apt-get install -yqq --no-install-recommends ca-certificat
 COPY ./common /opt/codex/common
 
 # install janet from head branch
-COPY --from=janet /app/bin/janet /usr/local/bin/janet
+COPY --from=janet /usr/local/bin /usr/local/bin
+COPY --from=janet /usr/local/lib /usr/local/lib
 
 # install node
 COPY --from=node /usr/local/bin/node /usr/local/bin/node
