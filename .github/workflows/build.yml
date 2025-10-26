@@ -2,10 +2,11 @@ name: build
 
 on:
   workflow_call:
-    env:
-      REGISTRY_NAME: codex
-      CI: true
-      IMAGE_NAME: proskurekov/base-image
+
+env:
+  REGISTRY_NAME: codex
+  CI: true
+  IMAGE_NAME: proskurekov/base-image
 
 jobs:
   build:
