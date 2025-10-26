@@ -6,3 +6,6 @@ on:
 jobs:
   dispatch:
     uses: ./.github/workflows/build.yml
+    secrets:
+      docker-username: ${{ secrets.DOCKER_USERNAME }}
+      docker-password: ${{ secrets.DOCKER_PASSWORD }}
