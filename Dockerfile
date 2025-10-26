@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # install packages
 RUN apt-get update && apt-get install -yqq --no-install-recommends ca-certificates \
-    curl git \
+    curl git vim \
     libyaml-dev \
     yamllint \
     zip unzip \
