@@ -1,0 +1,11 @@
+name: Repository Dispatch
+
+on:
+  repository_dispatch:
+    types: [update]
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo update
