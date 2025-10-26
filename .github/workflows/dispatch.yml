@@ -4,5 +4,5 @@ on:
   repository_dispatch:
     types: [update]
 jobs:
-  call-build:
+  dispatch:
     uses: ./.github/workflows/build.yml
