@@ -3,7 +3,7 @@
 (use spork/path)
 (use sh)
 
-(def root-path (join (os/cwd) ".."))
+(def root-path "/opt/codex/common")
 
 (def validations-path (join root-path "validations"))
 
