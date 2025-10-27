@@ -14,13 +14,6 @@ env:
   IMAGE_NAME: proskurekov/base-image
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Check image building
-        run: docker build .
-
   build-push:
     runs-on: ubuntu-latest
     needs: build
